@@ -5,6 +5,7 @@ const typeDefs = require("./typeDefs");
 const resolvers = require("./resolvers");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const product = require("./routes/product");
 
 dotenv.config();
 
@@ -34,9 +35,7 @@ async function startApolloServer() {
       process.exit();
     });
 
-  app.use("/", (req, res) => {
-    res.send("Hello from express apollo server");
-  });
+  app.use("/api/product", product);
 
   app.listen(4000, () => console.log("server in running on port 4000"));
 }
