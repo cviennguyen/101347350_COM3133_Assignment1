@@ -28,7 +28,7 @@ const resolvers = {
         const employee = new Employee(args.employee);
         await employee.save();
         return employee;
-      } catch {
+      } catch (err) {
         console.log(err);
       }
     },
@@ -79,7 +79,7 @@ const resolvers = {
         if (!valid) {
           return "Invalid password";
         }
-        return "Login successful";
+        return "User logged in successfully";
       } catch (err) {
         console.log(err);
       }

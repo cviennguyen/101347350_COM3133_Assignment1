@@ -22,7 +22,7 @@ const EmployeeSchema = new Schema({
     enum: ["Male", "Female", "Other"],
   },
   salary: {
-    type: Number,
+    type: String,
     required: true,
   },
 });

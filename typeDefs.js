@@ -7,7 +7,7 @@ const typeDefs = gql`
     lastName: String!
     email: String!
     gender: String
-    salary: Float!
+    salary: String!
   }
 
   type User {
@@ -27,7 +27,7 @@ const typeDefs = gql`
     lastName: String
     email: String
     gender: String
-    salary: Float
+    salary: String
   }
 
   input UserInput {

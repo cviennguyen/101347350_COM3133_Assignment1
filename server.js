@@ -4,11 +4,13 @@ const mongoose = require("mongoose");
 const typeDefs = require("./typeDefs");
 const resolvers = require("./resolvers");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 dotenv.config();
 
 async function startApolloServer() {
   const app = express();
+  app.use(cors());
   const server = new ApolloServer({ typeDefs, resolvers });
   await server.start();
   server.applyMiddleware({ app });
