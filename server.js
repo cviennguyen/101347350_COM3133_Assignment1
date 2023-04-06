@@ -34,7 +34,7 @@ async function startApolloServer() {
       process.exit();
     });
 
-  app.use((req, res) => {
+  app.use("/", (req, res) => {
     res.send("Hello from express apollo server");
   });
 
